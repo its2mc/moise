@@ -25,10 +25,10 @@ var comms = require('morphbridge').comms,
 Place your own function to handle messages recieved by the node.
 */ 
 var handle = function(msg){
-  logger.logStat(" Node 8 log - ");
-  setTimeout(function(){ 
-    comms.transmit(msg);
-  }, 3000);
+	logger.logStat(" Node 8 log - ");
+	setTimeout(function(){ 
+		comms.transmit(msg);
+	}, 3000);
 };
 
 //Socket Initialisation
@@ -36,4 +36,6 @@ comms.init(handle); //Pass message handling function to sub_socket
 
 console.log("Starting moise");
 
-comms.transmit(1);
+setTimeout(function(){ 
+	comms.transmit(1);
+}, 3000);
